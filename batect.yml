@@ -1,0 +1,31 @@
+containers:
+  app:
+    image: ubuntu:20.04
+    command: bash -c "echo 'Starting up!'; while true; do date; sleep 1; done"
+    log_driver: gelf
+    log_options:
+      gelf-address: udp://localhost:12201
+    dependencies:
+      - sqelf
+
+  sqelf:
+    image: datalust/sqelf:2.0.270
+    ports:
+      - 12201:12201/udp
+    environment:
+      SEQ_ADDRESS: http://seq:5341
+    dependencies: 
+      - seq
+
+  seq:
+    image: datalust/seq:5.1.3364
+    ports:
+      - 9000:80
+    environment:
+      ACCEPT_EULA: Y
+
+tasks:
+  run:
+    description: Run the sample app
+    run:
+      container: app
