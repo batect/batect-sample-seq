@@ -18,7 +18,7 @@ containers:
       - seq
 
   seq:
-    image: datalust/seq:5.1.3364
+    build_directory: .batect/seq
     ports:
       - 9000:80
     environment:
