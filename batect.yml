@@ -9,12 +9,12 @@ containers:
       - sqelf
 
   sqelf:
-    image: datalust/sqelf:2.0.270
+    image: datalust/sqelf:2.0.288
     ports:
       - 12201:12201/udp
     environment:
       SEQ_ADDRESS: http://seq:5341
-    dependencies: 
+    dependencies:
       - seq
 
   seq:
