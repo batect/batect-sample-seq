@@ -1,4 +1,4 @@
-FROM datalust/seq:2020.3.4761
+FROM datalust/seq:2020.4.5119
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl
 
