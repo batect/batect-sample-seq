@@ -9,7 +9,7 @@ containers:
       - sqelf
 
   sqelf:
-    image: datalust/sqelf:2.0.288
+    image: datalust/sqelf:2.0.298
     ports:
       - 12201:12201/udp
     environment:
