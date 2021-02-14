@@ -27,7 +27,7 @@ function ensureAtLeastOneMatchingLogMessage() {
         echo "> Found no matching log messages for filter '$filter'" >/dev/stderr
         exit 1
     else
-        echo "> Found one matching log message for filter '$filter'"
+        echo "> Found matching log message for filter '$filter'"
     fi
 }
 
