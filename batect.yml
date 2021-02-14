@@ -1,7 +1,7 @@
 containers:
   app:
     image: ubuntu:20.04
-    command: bash -c "echo 'Starting up!'; while true; do date; sleep 1; done"
+    command: bash -c "echo 'Starting up!'; while true; do echo "Logging again at $(date)"; sleep 1; done"
     log_driver: gelf
     log_options:
       gelf-address: udp://127.0.0.1:12201
@@ -24,8 +24,25 @@ containers:
     environment:
       ACCEPT_EULA: Y
 
+  test-env:
+    image: datalust/seqcli:2021.1.405@sha256:68ae2aed07a8e2ff9bb4580855e5ee71e9ced5da27ce9e8c238d0dd198df3002
+    volumes:
+      - local: .
+        container: /code
+        options: ro
+    working_directory: /code
+    entrypoint: sh -c
+
 tasks:
   run:
     description: Run the sample app
     run:
       container: app
+
+  test:
+    description: Test that the sample is working as expected
+    dependencies:
+      - app
+    run:
+      container: test-env
+      command: /code/scripts/test.sh
