@@ -25,7 +25,7 @@ containers:
       ACCEPT_EULA: Y
 
   test-env:
-    image: datalust/seqcli:2021.1.405@sha256:68ae2aed07a8e2ff9bb4580855e5ee71e9ced5da27ce9e8c238d0dd198df3002
+    image: datalust/seqcli:2021.2.443@sha256:928987e846961273babc19c998f02fd63c86b2dc114ae24100aae2bec4c029f0
     volumes:
       - local: .
         container: /code
