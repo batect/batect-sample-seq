@@ -9,7 +9,7 @@ containers:
       - sqelf
 
   sqelf:
-    image: datalust/seq-input-gelf:2.0.298@sha256:922d80fb31ee3ecd3da456277e8a4d6c5cf0a6a9caaad02afb8f6ee0108cc3f5
+    image: datalust/seq-input-gelf:2.0.322@sha256:7f7723986af2f1741a29e20e73fdb01a7cd71c5acafc5ee02e81842157c41d1e
     ports:
       - 12201:12201/udp
     environment:
