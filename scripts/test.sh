@@ -6,7 +6,7 @@ PATH="$PATH:/bin/seqcli" # The seqcli executable is at /bin/seqcli/seqcli
 
 function main() {
     echo "Configuring test environment..."
-    seqcli config -k connection.serverUrl -v http://seq
+    seqcli config --key=connection.serverUrl --value=http://seq
 
     echo "Sleeping to allow some messages to be logged..."
     sleep 2
