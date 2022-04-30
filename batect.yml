@@ -1,6 +1,6 @@
 containers:
   app:
-    image: ubuntu:22.04
+    image: ubuntu:22.10
     command: bash -c "echo 'Starting up!'; while true; do echo "Logging again at $(date)"; sleep 1; done"
     log_driver: gelf
     log_options:
