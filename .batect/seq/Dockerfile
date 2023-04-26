@@ -1,4 +1,4 @@
-FROM datalust/seq:2023.1.9162@sha256:d54cb036e65ee2a25295cc24d4bb9a66cedf6379421ceb6bf10d5bc3aba81440
+FROM datalust/seq:2023.1.9229@sha256:a10a64a18bb98db21d055bffc8805fd623d21264228228e4e1f5af1c46435779
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl
 
